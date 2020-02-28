@@ -1,0 +1,36 @@
+# Below is a code block for calculating BMI Index of a person, and displaying the Weight Class against it:
+
+try:
+    w = float(input('Please enter your weight in kilograms: '))
+    assert(w > 0)
+    h = float(input('Please enter your height in meters.: '))
+    assert(h > 0)
+    BMI = w/(h**2)
+    
+    print('Your BMI is:' ,round(BMI,2))
+
+#Below are the defined ranges for the BMI along with the weight classes:
+
+    if BMI <= 18.5:
+        print('You are Underweight')
+    elif BMI <= 24.9:
+        print('You are Normal')
+    elif BMI <= 29.9:
+        print('You are Overweight')
+    else:
+        print('You are Very Overweight')
+        
+# The user may enter a non-numeric value or a string as input, for which an exception is prompted with a message:
+
+except (ValueError) as n:
+    print("Please enter a numeric value")
+    
+#KeyboardInterrupt error occurs when a user hits interrupt while the program is running,for which an exception is prompted with a message:
+
+except (KeyboardInterrupt) as p:
+    print("Please dont press delete or cltrl+c key while the program is running")
+    
+#AssertionError occurs if the user enters a negative or 0 as the input, contrary to assert mentioned in the code, for which an exception is prompted with a message:
+
+except (AssertionError) as q:
+    print("Please enter a positive non zero value")
