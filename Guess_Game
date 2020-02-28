@@ -1,0 +1,33 @@
+#The following code block is playing a guess game with the user.
+from random import randint
+try:
+    print('Hello, Lets Play a game')
+    print('I am thinking of an integer between 0 and 10 (extremes included), and you need to guess the number.')
+    
+    guessnum = int(input('Please enter a number between 0 and 10: '))
+    assert(guessnum > -1 and guessnum < 11)
+    
+# A random number is chosen between 0 to 10 using the randint function from the random package.
+
+    randomnum = randint(0,10)
+    
+    if randomnum == guessnum:
+        print('Bingo! You guessed it right!')
+    else:
+        print('Sorry, my number was: ', randomnum)
+
+# AssertionError exception occurs when a user inputs a value outsite the asserted range, hence a message in prompted.
+    
+except (AssertionError) as a:
+    print('I am guessing a number between 0 and 50')
+    print('Please enter a number within this range.')
+    
+# ValueError occurs when a user enters a string or leaves it blank, hence a message is prompted.
+
+except (ValueError) as b:
+    print('Please enter a integer value between 0 and 10')
+    
+#KeyboardInterrupt error occurs when a user hits interrupt while the program is running,for which an exception is prompted with a message:
+
+except (KeyboardInterrupt) as p:
+    print("Please dont press delete or cltrl+c key while the program is running")
