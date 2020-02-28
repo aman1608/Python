@@ -1,0 +1,57 @@
+# The following code block is of a calculator for computing the required operation on 2 numbers.
+
+#The user is displayed with the available operations:
+
+try:
+    print('Please select an operation: ')
+    print('1. Addition')
+    print('2. Subtraction')
+    print('3. Multiplication')
+    print('4. Division')
+
+#The user is prompted to enter the operator choice.
+
+    operator = int(input('Please enter your choice: '))
+
+#The user is prompted to enter the numbers.
+
+    if ( 1 <= operator <= 4):
+        print('Please enter two numbers: ')
+    
+        num1 = float(input('Please enter the first numerical value: '))
+        num2 = float(input('Please enter the second numerical value'))
+#We are checking the operator and performing the operation.    
+        if operator == 1:
+            result = num1 + num2
+            print('The sum of the numbers is: ', result)
+        elif operator == 2:
+            result = num1 - num2
+            print('The result is: ', result)
+        elif operator == 3:
+            result = num1 * num2
+            print('The product is: ', result)
+        else:
+            result = num1 / num2
+            assert(num2 != 0)
+            print('The result is: ', result)
+        
+ 
+    elif operator == 5:
+        print('Thank You for using me')
+    else:
+        print('Please enter a valid operator code')
+
+# AssertionError exception occurs when a user inputs a value outsite the asserted range, hence a message in prompted.
+        
+except (AssertionError) as b:
+    print('Please enter a non-zero value')
+    
+# ValueError occurs when a user enters a string or leaves it blank, hence a message is prompted.
+
+except (ValueError) as c:
+    print('Please enter a numerical value')
+    
+#KeyboardInterrupt error occurs when a user hits interrupt while the program is running,for which an exception is prompted with a message:
+
+except (KeyboardInterrupt) as p:
+    print("Please dont press delete or cltrl+c key while the program is running")
